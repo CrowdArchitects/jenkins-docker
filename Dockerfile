@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM jenkinsci/slave:3.23-1
 
 ARG GOSU_VERSION=1.10
 

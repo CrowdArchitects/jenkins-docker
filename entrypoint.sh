@@ -16,5 +16,4 @@ if ! groups jenkins | grep -q docker; then
 fi
 
 # drop access from root user to jenkins user and run jenkins entrypoint
-exec gosu jenkins /sbin/tini -- /usr/local/bin/jenkins.sh "$@"
-
+exec java -jar /usr/share/jenkins/slave.jar -workDir /home/jenkins/agent -jnlpUrl $JENKINS_JNLP_URL -secret $JENKINS_AGENT_SECRET
